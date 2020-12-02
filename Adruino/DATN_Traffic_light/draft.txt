@@ -1,0 +1,39 @@
+if (Serial.available()) //Nếu có tín hiệu từ Pi
+	{
+		buff = Serial.readStringUntil('\r'); //Đọc vào đến khi gặp \r (xuống dòng)
+		
+		if (buff=="turn on green1")             
+		{
+			digitalWrite(green1,HIGH);       
+			Serial.println("turned on green1");  
+		}
+		if (buff=="turn on green2")             
+		{
+			digitalWrite(green2,HIGH);       
+			Serial.println("turned on green2");  
+		}if (buff=="turn on red1")             
+		{
+			digitalWrite(red1,HIGH);       
+			Serial.println("turned on red1");  
+		}if (buff=="turn on red2")             
+		{
+			digitalWrite(red2,HIGH);       
+			Serial.println("turned on red2");  
+		}if (buff=="turn on yellow1")             
+		{
+			digitalWrite(yellow1,HIGH);       
+			Serial.println("turned on yellow1");  
+		}if (buff=="turn on yellow2")             
+		{
+			digitalWrite(yellow2,HIGH);       
+			Serial.println("turned on yellow2");  
+		}if (buff=="turn on all led")             
+		{
+			light_control(0xff);    
+			Serial.println("turned on all led");  
+		}if (buff=="turn off all led")             
+		{
+			light_control(0x00); 
+			Serial.println("turned off all led");  
+		}
+	}
